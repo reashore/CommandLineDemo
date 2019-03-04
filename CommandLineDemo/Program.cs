@@ -5,6 +5,7 @@ using static System.Console;
 
 namespace CommandLineDemo
 {
+    // https://github.com/dotnet/command-line-api/wiki/Your-first-app-with-System.CommandLine
     public class Program
     {
         public static int Main(string[] args)
