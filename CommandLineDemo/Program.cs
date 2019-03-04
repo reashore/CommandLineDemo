@@ -22,20 +22,20 @@ namespace CommandLineDemo
     {
         public static int ParseCommandLine(string[] args)
         {
-            Option optionThatTakesInt = new Option(
-                "--int-option",
-                "An option whose argument is parsed as an int",
-                new Argument<int>(defaultValue: 42));
+            string alias = "--int-option";
+            string description = "An option whose argument is parsed as an int";
+            Argument argument = new Argument<int>(defaultValue: 42);
+            Option optionThatTakesInt = new Option(alias, description, argument);
             
-            Option optionThatTakesBool = new Option(
-                "--bool-option",
-                "An option whose argument is parsed as a bool",
-                new Argument<bool>());
-            
-            Option optionThatTakesFileInfo = new Option(
-                "--file-option",
-                "An option whose argument is parsed as a FileInfo",
-                new Argument<FileInfo>());
+            alias = "--bool-option";
+            description = "An option whose argument is parsed as a bool";
+            argument = new Argument<bool>();
+            Option optionThatTakesBool = new Option(alias, description, argument);
+
+            alias = "--file-option";
+            description = "An option whose argument is parsed as a FileInfo";
+            argument = new Argument<FileInfo>();
+            Option optionThatTakesFileInfo = new Option(alias, description, argument);
 
             var rootCommand = new RootCommand {Description = "My sample app"};
             rootCommand.AddOption(optionThatTakesInt);
